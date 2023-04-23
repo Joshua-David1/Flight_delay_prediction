@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background-color: #CCD4DD;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow-y: hidden;
+    flex-wrap: wrap;
+
+}
+
+
+label{
+    margin-top: 0.5rem;
+}
+
+.form-select,.form-control{
+    padding: 0.7rem;
+    width: 45rem;
+    font-size: 1.2rem;
+    margin: 0rem 0rem;
+}
+
+h1{
+    font-family: 'Patua One', cursive;
+}
+
+.main_div{
+    animation-name: slide-down;
+    animation-duration: 1s;
+    position: relative;
+    text-align: left;
+    padding: 3rem;
+    background-color: #FFFFFF;
+    width: 1300px;
+    height: 850px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.predict-btn{
+    position: absolute;
+    right: 20%;
+    top: 88%;
+    transform: translate(50%,-50%);
+    width: 35%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    border-radius: 2rem;
+}
+
+.home-flight-img{
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    width: 250px;
+    transform: translateY(-50%);
+}
+
+.result-flight-img{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 250px;
+    transform: translate(-50%,-50%);
+}
+
+@keyframes slide-down{
+    0%{
+        opacity: 0;
+        left: -50%;
+    }
+
+    75%{
+        left: 3%;
+    }
+
+    100%{
+        left: 0;
+        opacity: 1;
+    }
+}

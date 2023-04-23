@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='assets/favicon-flight.jpg')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    <title>Flight Delay Prediction</title>
+</head>
+<body>
+    <div class="main_div">
+        <h1>Flight Delay Prediction</h1>
+       
+        <form action="/" method="post">
+            <div>
+                <img src="{{url_for('static',filename='assets/home-image.jpg')}}" class="home-flight-img" alt="">
+                <label>Month</label>
+                <select class="form-select" aria-label="Default select example" name="month">
+                    <option selected>Select Month</option>
+                    {% for i in range(1,13)%}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+                <label>DATE</label>
+                <select class="form-select" aria-label="Default select example" name="date">
+                    <option selected>Select Date</option>
+                    {% for i in range(1,31)%}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+                <label>DIVERTED</label>
+                <select class="form-select" aria-label="Default select example" name="diverted">
+                    <option selected>Was the flight Diverted?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <label>CANCELLED</label>
+                <select class="form-select" aria-label="Default select example" name="cancelled">
+                    <option selected>Was the flight Cancelled?</option>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                <label>WEATHER</label>
+                <select class="form-select" aria-label="Default select example" name="weather">
+                    <option selected>What was the Weather like?</option>
+                    <option value="0">Sunny</option>
+                    <option value="1">Rainy</option>
+                    <option value="2">Windy</option>
+                    <option value="3">Cloudy</option>
+                    <option value="4">Stormy</option>
+                </select>
+                <label>DEPARTURE DELAY</label>
+                <select class="form-select" aria-label="Default select example" name="departure_delay">
+                    <option selected>Departure Delay (in minutes)</option>
+                    {% for i in range(-30,180) %}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                </select>
+                <label>SCHEDULED DEPARTURE</label>
+                <input type="text" class="form-control" placeholder="Scheduled Departure (00:00)" aria-label="Scheduled Departure" aria-describedby="basic-addon2" maxlength="5" name="scheduled_departure">
+                <label>SCHEDULED ARRIVAL</label>
+                <input type="text" class="form-control" placeholder="Scheduled Arrival (00:00)" aria-label="Scheduled Arrival" aria-describedby="basic-addon2" maxlength="5" name="scheduled_arrival">
+                <button class="btn btn-primary predict-btn" type="submit">Predict</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+</body>
+</html>
