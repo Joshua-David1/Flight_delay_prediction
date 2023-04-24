@@ -59,9 +59,23 @@
                     {% endfor %}
                 </select>
                 <label>SCHEDULED DEPARTURE</label>
-                <input type="text" class="form-control" placeholder="Scheduled Departure (00:00)" aria-label="Scheduled Departure" aria-describedby="basic-addon2" maxlength="5" name="scheduled_departure">
+                <select class="form-select" aria-label="Default select example" name="scheduled_departure">
+                    <option selected>Scheduled Departure</option>
+                    {% for i in range(0,24) %}
+                    <option value="{{i}}:00">{{i}}:00</option>
+                    <option value="{{i}}:30">{{i}}:30</option>
+                    {% endfor %}
+                </select>
+                <!-- <input type="text" class="form-control" placeholder="Scheduled Departure (00:00)" aria-label="Scheduled Departure" aria-describedby="basic-addon2" maxlength="5" name="scheduled_departure"> -->
                 <label>SCHEDULED ARRIVAL</label>
-                <input type="text" class="form-control" placeholder="Scheduled Arrival (00:00)" aria-label="Scheduled Arrival" aria-describedby="basic-addon2" maxlength="5" name="scheduled_arrival">
+                <select class="form-select" aria-label="Default select example" name="scheduled_arrival">
+                    <option selected>Scheduled Arrival</option>
+                    {% for i in range(0,24) %}
+                    <option value="{{i}}:00">{{i}}:00</option>
+                    <option value="{{i}}:30">{{i}}:30</option>
+                    {% endfor %}
+                </select>
+                <!-- <input type="text" class="form-control" placeholder="Scheduled Arrival (00:00)" aria-label="Scheduled Arrival" aria-describedby="basic-addon2" maxlength="5" name="scheduled_arrival"> -->
                 <button class="btn btn-primary predict-btn" type="submit">Predict</button>
             </div>
         </form>
